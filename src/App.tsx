@@ -17,7 +17,9 @@ function App() {
     const hls = new Hls({ debug: true })
 
     if (Hls.isSupported()) {
-      hls.loadSource('http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8')
+      hls.loadSource(
+        'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+      )
       hls.attachMedia(videoRef.current)
       hls.on(Hls.Events.MANIFEST_PARSED, function () {
         videoRef.current?.play()
